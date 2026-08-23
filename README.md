@@ -1,14 +1,14 @@
 # TRACE: Evidence-First AI Decision Intelligence
 
-> \\\*\\\*TRACE\\\*\\\* transforms business inquiries into transparent, verifiable analytics by generating competing hypotheses, executing high-speed ANSI SQL queries directly against \\\*\\\*Exasol SaaS\\\*\\\*, calculating deterministic evidence scores, and synthesizing audit-ready root causes with instant counter-evidence verification.
+> TRACE transforms business inquiries into transparent, verifiable analytics by generating competing hypotheses, executing high-speed ANSI SQL queries directly against Exasol SaaS, calculating deterministic evidence scores, and synthesizing audit-ready root causes with instant counter-evidence verification.
 
-## 🎯 The Problem
+## The Problem
 
 Traditional Business Intelligence tools and text-to-SQL assistants often produce static conclusions without providing enough verifiable context.
 
-When important business metrics fluctuate, operators need to know **why** — not just what happened. Black-box AI conclusions can make root-cause analysis difficult to verify and can introduce confirmation bias or hallucinated explanations.
+When important business metrics fluctuate, operators need to know **why** not just what happened. Black-box AI conclusions can make root-cause analysis difficult to verify and can introduce confirmation bias or hallucinated explanations.
 
-## 💡 The Solution
+## The Solution
 
 **TRACE** is an evidence-first decision intelligence agent designed to turn natural-language business questions into transparent, verifiable investigations.
 
@@ -25,7 +25,7 @@ Tests alternative explanations and counter-signals to re-evaluate confidence and
 
 \---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 flowchart LR
@@ -53,8 +53,8 @@ TRACE generates schema-aware ANSI SQL queries against the Exasol `MAIN` schema.
 The investigation can analyze tables such as:
 
 * `ORDERS`
-* `PAYMENT\\\_LOGS`
-* `FULFILLMENT\\\_LOGS`
+* `PAYMENT_LOGS`
+* `FULFILLMENT_LOGS`
 * `INVENTORY`
 
 #### 3\. Evidence Execution
@@ -73,26 +73,26 @@ Operators can challenge a conclusion and ask TRACE to investigate alternative ex
 
 \---
 
-## 🗄️ Core Data Schema
+## Core Data Schema
 
 The primary Exasol schema is `MAIN`.
 
 |Table|Description|Key Attributes|
 |-|-|-|
-|`ORDERS`|Transaction records and conversion health|`ORDER\\\_ID`, `USER\\\_ID`, `CATEGORY`, `DEVICE\\\_TYPE`, `AMOUNT`, `STATUS`, `CREATED\\\_AT`|
-|`PAYMENT\\\_LOGS`|Gateway latency and payment error diagnostics|`LOG\\\_ID`, `ORDER\\\_ID`, `GATEWAY`, `STATUS\\\_CODE`, `ERROR\\\_CODE`, `LATENCY\\\_MS`|
-|`FULFILLMENT\\\_LOGS`|Shipping and logistics performance|`FULFILLMENT\\\_ID`, `ORDER\\\_ID`, `WAREHOUSE\\\_ID`, `CARRIER`, `DELAY\\\_DAYS`, `STATUS`|
-|`INVENTORY`|Product catalog and stock availability|`PRODUCT\\\_ID`, `PRODUCT\\\_NAME`, `CATEGORY`, `STOCK\\\_QUANTITY`, `LAST\\\_UPDATED`|
+|`ORDERS`|Transaction records and conversion health|`ORDER_ID`, `USER_ID`, `CATEGORY`, `DEVICE_TYPE`, `AMOUNT`, `STATUS`, `CREATED_AT`|
+|`PAYMENT\\\_LOGS`|Gateway latency and payment error diagnostics|`LOG_ID`, `ORDER_ID`, `GATEWAY`, `STATUS_CODE`, `ERROR_CODE`, `LATENCY_MS`|
+|`FULFILLMENT\\\_LOGS`|Shipping and logistics performance|`FULFILLMENT_ID`, `ORDER_ID`, `WAREHOUSE_ID`, `CARRIER`, `DELAY_DAYS`, `STATUS`|
+|`INVENTORY`|Product catalog and stock availability|`PRODUCT_ID`, `PRODUCT_NAME`, `CATEGORY`, `STOCK_QUANTITY`, `LAST_UPDATED`|
 
 \---
 
-## ✨ Key Features
+## Key Features
 
-### 🔍 Deterministic Confidence Scoring
+### Deterministic Confidence Scoring
 
 TRACE produces a **0–100% evidence score** based on measurable signals and predefined scoring logic rather than arbitrary model-generated confidence.
 
-### 📊 Auditable Evidence
+### Auditable Evidence
 
 Every evidence node can expose:
 
@@ -104,17 +104,17 @@ Every evidence node can expose:
 
 This makes the reasoning process inspectable.
 
-### 🧠 Live Schema Introspection
+### Live Schema Introspection
 
 TRACE can discover database metadata and map analytical queries to the available Exasol schema.
 
-### ⚔️ Active Counter-Analysis
+### Active Counter-Analysis
 
 The **Challenge My Conclusion** engine actively searches for alternative explanations and confounding variables instead of simply reinforcing the initial hypothesis.
 
 \---
 
-## 🚀 Quickstart
+##  Quickstart
 
 ### 1\. Clone the Repository
 
@@ -128,11 +128,11 @@ cd exasol-hackathon-trace
 Create a `.env` file in the project root:
 
 ```env
-EXASOL\\\_HOST=your\\\_exasol\\\_host:8563
-EXASOL\\\_USER=your\\\_exasol\\\_user
-EXASOL\\\_PASSWORD=your\\\_exasol\\\_password
-EXASOL\\\_SCHEMA=MAIN
-GEMINI\\\_API\\\_KEY=your\\\_gemini\\\_api\\\_key
+EXASOL_HOST=your_exasol_host:8563
+EXASOL_USER=your_exasol_user
+EXASOL_PASSWORD=your_exasol_password
+EXASOL_SCHEMA=MAIN
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
 > ⚠️ Never commit `.env` files, API keys, passwords, or database credentials to GitHub.
@@ -148,7 +148,7 @@ python -m venv .venv
 #### Windows
 
 ```bash
-.venv\\\\Scripts\\\\activate
+.venv\Scripts\activate
 ```
 
 #### macOS / Linux
@@ -172,7 +172,7 @@ uvicorn backend.main:app --reload --port 8000
 ### 4\. Seed the Exasol Dataset
 
 ```bash
-python backend/db/seed\\\_exasol.py
+python backend/db/seed_exasol.py
 ```
 
 ### 5\. Run the Frontend
@@ -181,7 +181,7 @@ Open the frontend application in your browser or serve it using a local developm
 
 \---
 
-## 🧰 Technology Stack
+## Tech Stack
 
 |Layer|Technology|
 |-|-|
@@ -199,7 +199,7 @@ Open the frontend application in your browser or serve it using a local developm
 
 \---
 
-## 🔐 Security Considerations
+## Security Considerations
 
 TRACE is designed with security and auditability in mind.
 
@@ -211,37 +211,32 @@ TRACE is designed with security and auditability in mind.
 
 \---
 
-## 🎥 Demo
+##  Demo
 
 Add your project demonstration video or deployment URL here.
 
 ```text
-Live Demo: YOUR\\\_DEPLOYMENT\\\_URL
-Demo Video: YOUR\\\_VIDEO\\\_URL
+Live Demo: YOUR_DEPLOYMENT_URL
+Demo Video: YOUR_VIDEO_URL
 ```
 
 \---
 
-## 📸 Screenshots
+## Screenshots
 
 Add screenshots of the TRACE interface here.
 
-```markdown
-!\\\[TRACE Dashboard](screenshots/dashboard.png)
-```
+<img width="1909" height="909" alt="image" src="https://github.com/user-attachments/assets/ae3f1e86-1404-4ce4-abd4-2b71873b128c" />
+<img width="1011" height="483" alt="image" src="https://github.com/user-attachments/assets/fea58154-4147-46bd-9069-29664cc65ec8" />
+<img width="1872" height="908" alt="image" src="https://github.com/user-attachments/assets/4098e4cf-7353-4462-b27f-ccc3fee5623b" />
+<img width="899" height="523" alt="image" src="https://github.com/user-attachments/assets/a1430696-5616-44ea-867b-26ec62a5eb04" />
+<img width="893" height="483" alt="image" src="https://github.com/user-attachments/assets/da9a64c6-bd4b-42cf-863a-b34c68dd6400" />
+<img width="1222" height="625" alt="image" src="https://github.com/user-attachments/assets/ba7b4741-c1fd-4f1f-938f-ab884e48159d" />
 
-Recommended screenshots:
-
-1. Main dashboard
-2. Natural-language query interface
-3. Evidence graph
-4. SQL inspection modal
-5. Challenge My Conclusion interface
-6. Final root-cause analysis
 
 \---
 
-## 🏆 Why TRACE?
+##  Why TRACE?
 
 Most AI analytics systems focus on producing **answers**.
 
@@ -269,15 +264,15 @@ Auditable Decision
 
 This allows business operators to move from:
 
-> \\\*\\\*"The AI says this is the problem."\\\*\\\*
+> "The AI says this is the problem.
 
 to:
 
-> \\\*\\\*"Here is the hypothesis, here is the SQL, here is the data, here is the evidence score, and here is what happens when we challenge the conclusion."\\\*\\\*
+> "Here is the hypothesis, here is the SQL, here is the data, here is the evidence score, and here is what happens when we challenge the conclusion."
 
 \---
 
-## 👥 Team
+## Team
 
 **Exasol Hackathon Team**
 
@@ -287,7 +282,7 @@ to:
 
 \---
 
-## 📄 License
+## License
 
 This project was developed as part of the **Exasol Hackathon**.
 
