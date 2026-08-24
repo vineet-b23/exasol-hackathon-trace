@@ -119,7 +119,7 @@ class GeminiClient:
             prompt = f"Generate an investigation plan for query: '{query}'\n\n{SCHEMA_CONTEXT}"
             try:
                 response = self.client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-3.6-flash',
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_PROMPT,
@@ -152,7 +152,7 @@ class GeminiClient:
             prompt = f"User Investigation Query: '{query}'\nTimeframe: {timeframe}\n\nExecution Results:\n{json.dumps(execution_results, indent=2, default=str)}"
             try:
                 response = self.client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-3.6-flash',
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_PROMPT,
