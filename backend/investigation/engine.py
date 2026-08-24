@@ -177,8 +177,24 @@ class InvestigationEngine:
                 hypotheses_plan,
                 execution_results,
             )
-            if isinstance(scoring_metrics, (int, float)):
-                scoring_metrics = {"overall_score": scoring_metrics}
+            
+            # 1. Handle case where scoring returns a raw list of scores per hypothesis
+            if isinstance(scoring_metrics, list):
+                hyp_scores = scoring_metrics
+                avg_score = int(sum(hyp_scores) / len(hyp_scores)) if hyp_scores else 75
+                scoring_metrics = {
+                    "overall_score": avg_score,
+                    "challenged_score": max(0, avg_score - 30),
+                    "hypothesis_scores": hyp_scores
+                }
+            # 2. Handle numeric return types
+            elif isinstance(scoring_metrics, (int, float)):
+                scoring_metrics = {
+                    "overall_score": int(scoring_metrics),
+                    "challenged_score": max(0, int(scoring_metrics) - 30),
+                    "hypothesis_scores": [int(scoring_metrics)] * len(execution_results)
+                }
+            # 3. Fallback for non-dict unexpected types
             elif not isinstance(scoring_metrics, dict):
                 scoring_metrics = {}
 
@@ -188,6 +204,7 @@ class InvestigationEngine:
             hyp_scores = scoring_metrics.get("hypothesis_scores", [])
             for idx, res in enumerate(execution_results):
                 res["score"] = hyp_scores[idx] if idx < len(hyp_scores) else 0
+
         except Exception as e:
             logger.error(f"Scoring engine failed: {e}")
             overall_score, challenged_score = 75, 45
