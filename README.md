@@ -216,7 +216,7 @@ TRACE is designed with security and auditability in mind.
 Add your project demonstration video or deployment URL here.
 
 ```text
-Live Demo: https://vineet-b23.github.io/exasol-hackathon-trace/
+Live Demo: https://vineet-b23.github.io/exasol-hackathon-trace/ (kindly be patient with the first query as the backend goes to sleep after inactivity)
 Demo Video: https://www.youtube.com/watch?v=MTXS6db0A8A
 ```
 
