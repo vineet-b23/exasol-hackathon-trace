@@ -217,7 +217,7 @@ Add your project demonstration video or deployment URL here.
 
 ```text
 Live Demo: https://vineet-b23.github.io/exasol-hackathon-trace/
-Demo Video: YOUR_VIDEO_URL
+Demo Video: https://www.youtube.com/watch?v=MTXS6db0A8A
 ```
 
 \---
@@ -232,6 +232,9 @@ Add screenshots of the TRACE interface here.
 <img width="899" height="523" alt="image" src="https://github.com/user-attachments/assets/a1430696-5616-44ea-867b-26ec62a5eb04" />
 <img width="893" height="483" alt="image" src="https://github.com/user-attachments/assets/da9a64c6-bd4b-42cf-863a-b34c68dd6400" />
 <img width="1222" height="625" alt="image" src="https://github.com/user-attachments/assets/ba7b4741-c1fd-4f1f-938f-ab884e48159d" />
+
+
+
 
 
 \---
